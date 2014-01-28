@@ -1,3 +1,6 @@
+*/target/*
+*/.settings/*
+
 # Compiled source #
 ###################
 *.com
@@ -9,7 +12,6 @@
 *.exe
 *.o
 *.so
-*.settings
 
 # Packages #
 ############
