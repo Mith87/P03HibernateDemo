@@ -2,6 +2,7 @@ package com.config;
 
 import java.util.Properties;
 
+import javax.inject.Inject;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,7 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @ComponentScan("com")
 @EnableWebMvc
 @EnableTransactionManagement
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:web.properties")
 
 public class AppConfig {
 	
@@ -31,8 +32,9 @@ public class AppConfig {
     private static final String DATABASE_USERNAME = "db.username";
     private static final String HIBERNATE_DIALECT = "hibernate.dialect";
     private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-    private static final String ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
+    private static final String HIBERNATE_PACKAGES_SCAN = "hibernate.packages.scan";
 	
+    @Inject
     private Environment e;
 
     @Bean
@@ -49,7 +51,7 @@ public class AppConfig {
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(getDataSource());
-        sessionFactoryBean.setPackagesToScan(e.getRequiredProperty(ENTITYMANAGER_PACKAGES_TO_SCAN));
+        sessionFactoryBean.setPackagesToScan(e.getRequiredProperty(HIBERNATE_PACKAGES_SCAN));
         sessionFactoryBean.setHibernateProperties(getHibernateProperties());
         return sessionFactoryBean;
     }
