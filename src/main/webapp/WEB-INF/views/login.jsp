@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Register</title>
+<title>Login</title>
 </head>
 <body>
-	<h3>REGISTER FORM HERE</h3>
+	<h3>LOGIN FORM HERE</h3>
 </body>
 </html>
