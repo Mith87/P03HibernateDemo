@@ -39,7 +39,7 @@ public class UserService implements IService{
 		this.userDAO.delete(pid);
 	}
 	@Override
-	public List getAll() {
+	public List<User> getAll() {
 		return this.userDAO.getAll();
 	}
 }
