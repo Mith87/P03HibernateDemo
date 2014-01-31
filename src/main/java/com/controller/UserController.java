@@ -59,7 +59,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/team/delete/{id}", method=RequestMethod.GET)
+    @RequestMapping(value="/user/delete/{id}", method=RequestMethod.GET)
     public ModelAndView userDelete(@ModelAttribute User user, @PathVariable int id) {
         ModelAndView modelAndView = new ModelAndView("manager");
         userService.delete(id);
