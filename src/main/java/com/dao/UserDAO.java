@@ -56,7 +56,7 @@ public class UserDAO implements IDAO{
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List getAll() {
+	public List<User> getAll() {
 		return this.getCurrentSession().createQuery("from User").list();
 	}
 }

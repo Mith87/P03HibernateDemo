@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     
-    @RequestMapping(value="/user/login")
+    @RequestMapping(value="/user/login", method = RequestMethod.GET)
     public ModelAndView userRegisterView() {
         ModelAndView modelAndView = new ModelAndView("login");
         return modelAndView;
@@ -34,7 +34,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/user/manager")
+    @RequestMapping(value="/user/manager", method = RequestMethod.GET)
     public ModelAndView userManager() {
         ModelAndView modelAndView = new ModelAndView("manager");
         List<User> users = userService.getAll();

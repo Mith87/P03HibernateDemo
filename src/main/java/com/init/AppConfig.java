@@ -19,9 +19,9 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 @Configuration
-@ComponentScan("com")
 @EnableWebMvc
 @EnableTransactionManagement
+@ComponentScan("com.controller")
 @PropertySource("classpath:web.properties")
 
 public class AppConfig {
@@ -70,7 +70,7 @@ public class AppConfig {
         return transactionManager;
     }
 
-    @Bean
+    @Bean(name = "viewResolver")
     public UrlBasedViewResolver getViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setPrefix("/WEB-INF/views/");

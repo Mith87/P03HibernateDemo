@@ -9,5 +9,5 @@ public interface IDAO {
 	public User getByName(String pname);
 	public void update(User puser);
 	public void delete(int pid);
-	public List getAll();
+	public List<User> getAll();
 }
