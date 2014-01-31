@@ -25,7 +25,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/user/register")
+    @RequestMapping(value="/user/register", method=RequestMethod.POST)
     public ModelAndView userRegister(@ModelAttribute User user) {
         ModelAndView modelAndView = new ModelAndView("register");
         userService.add(user);
