@@ -7,6 +7,30 @@
 <title>Manager</title>
 </head>
 <body>
-	<h3>MANAGER FORM HERE</h3>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>User name</th>
+					<th>First name</th>
+					<th>Last name</th>
+					<th>Gender</th>
+					<th>Birthday</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${users}" var="user">
+	                <tr>
+	                    <td><c:out value="${user.name}" /></td>
+	                    <td><c:out value="${user.first_name}" /></td>
+	                    <td><c:out value="${user.last_name}" /></td>
+	                    <td><c:out value="${user.gender}" /></td>
+	                    <td><fmt:formatDate pattern="dd-MMM-yyyy" value="${user.birthday}"/></td>
+	                    <td><a href="${pageContext.request.contextPath}/user/edit/${user.id}">Read</a></td>
+	                </tr>
+            	</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
