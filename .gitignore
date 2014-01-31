@@ -1,13 +1,7 @@
-*target/*
-*.settings/*
-
 # Compiled source #
 ###################
 *.com
 *.class
-*.project
-*.springBeans
-*.classpath
 *.dll
 *.exe
 *.o
@@ -39,5 +33,31 @@
 ._*
 .Spotlight-V100
 .Trashes
+Icon?
 ehthumbs.db
 Thumbs.db
+
+# JetBrains config files #
+##########################
+.idea
+*.iml
+
+# Eclipse config files #
+########################
+*.project
+*.classpath
+*.springBeans
+
+# Maven build artifacts files #
+###############################
+*target/*
+*.settings/*
+
+# Gradle build artifacts files #
+################################
+.gradle
+build
+
+
+
+
